@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
       title: 'Khinkal Metri',
       debugShowCheckedModeBanner: false,
       routes: {
-        Ratings.routeName: (context) => Ratings(),
+        '/login': (context) => LoginPage(),
+        '/categories': (context) => CategoriesPage(),
       },
-      home: Categories(),
+      home: LoginPage(),
     );
   }
 }

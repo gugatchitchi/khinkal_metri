@@ -1,2 +1,2 @@
-export 'categories.dart';
-export 'ratings.dart';
+export 'login_page.dart';
+export 'categories_page.dart';
