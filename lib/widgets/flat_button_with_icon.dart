@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:khinkal_metri/config/palette.dart';
-import 'package:khinkal_metri/config/size_config.dart';
+import 'package:khinkal_metri/configs/configs.dart';
 
 // This Widget returns buttons with icons and shadow
 class FlatButtonWithIcon extends StatelessWidget {

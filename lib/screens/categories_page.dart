@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:khinkal_metri/config/palette.dart';
-import 'package:khinkal_metri/config/size_config.dart';
+import 'package:khinkal_metri/configs/configs.dart';
 import 'package:khinkal_metri/widgets/widgets.dart';
 
 class CategoriesPage extends StatelessWidget {
@@ -36,7 +35,9 @@ class CategoriesPage extends StatelessWidget {
           ),
           // Button for khinkali page
           FlatButtonWithSvg(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/ratings');
+            },
             text: 'ხინკალი',
             svgAsset: 'assets/icons/khinkali.svg',
             backgroundColor: Palette.accent_red,
@@ -48,7 +49,9 @@ class CategoriesPage extends StatelessWidget {
           ),
           // Button for shawarma page
           FlatButtonWithSvg(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/ratings');
+            },
             text: 'შაურმა',
             svgAsset: 'assets/icons/shaurma.svg',
             backgroundColor: Palette.accent_green,
@@ -60,7 +63,9 @@ class CategoriesPage extends StatelessWidget {
           ),
           // Button for burger page
           FlatButtonWithSvg(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/ratings');
+            },
             text: 'ბურგერი',
             svgAsset: 'assets/icons/burger.svg',
             backgroundColor: Palette.accent_yellow,

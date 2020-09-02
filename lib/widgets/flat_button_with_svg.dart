@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:khinkal_metri/config/palette.dart';
-import 'package:khinkal_metri/config/size_config.dart';
+import 'package:khinkal_metri/configs/configs.dart';
 
 //  This widget returns button with svg inside and shadow
 class FlatButtonWithSvg extends StatelessWidget {

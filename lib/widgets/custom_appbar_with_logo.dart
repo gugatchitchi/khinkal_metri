@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../config/palette.dart';
+import 'package:khinkal_metri/configs/configs.dart';
 
 // This appbar is used to dispay icon on the top of pages
 class CustomAppBarWithLogo extends StatelessWidget with PreferredSizeWidget {
