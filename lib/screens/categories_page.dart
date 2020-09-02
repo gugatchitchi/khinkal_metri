@@ -34,12 +34,12 @@ class CategoriesPage extends StatelessWidget {
             height: SizeConfig.safeBlockVertical * 10,
           ),
           // Button for khinkali page
-          FlatButtonWithSvg(
+          FlatButtonWithIcon(
             onTap: () {
               Navigator.pushNamed(context, '/ratings');
             },
             text: 'ხინკალი',
-            svgAsset: 'assets/icons/khinkali.svg',
+            icon: MyCustomIcons.khinkali,
             backgroundColor: Palette.accent_red,
           ),
           // Spacer between buttons
@@ -48,12 +48,12 @@ class CategoriesPage extends StatelessWidget {
             height: SizeConfig.safeBlockVertical * 5,
           ),
           // Button for shawarma page
-          FlatButtonWithSvg(
+          FlatButtonWithIcon(
             onTap: () {
               Navigator.pushNamed(context, '/ratings');
             },
             text: 'შაურმა',
-            svgAsset: 'assets/icons/shaurma.svg',
+            icon: MyCustomIcons.shaurma,
             backgroundColor: Palette.accent_green,
           ),
           // Spacer between buttons
@@ -62,12 +62,12 @@ class CategoriesPage extends StatelessWidget {
             height: SizeConfig.safeBlockVertical * 5,
           ),
           // Button for burger page
-          FlatButtonWithSvg(
+          FlatButtonWithIcon(
             onTap: () {
               Navigator.pushNamed(context, '/ratings');
             },
             text: 'ბურგერი',
-            svgAsset: 'assets/icons/burger.svg',
+            icon: MyCustomIcons.burger,
             backgroundColor: Palette.accent_yellow,
           ),
         ],

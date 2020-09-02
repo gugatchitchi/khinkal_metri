@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "610934896145",
+    "firebase_url": "https://khinkalmetri.firebaseio.com",
+    "project_id": "khinkalmetri",
+    "storage_bucket": "khinkalmetri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610934896145:android:6ea6238548c31fec11a3b0",
+        "android_client_info": {
+          "package_name": "com.example.khinkal_metri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610934896145-fph639382j5mblaeob17kf3mis678hfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBWS9p5XiTyA0heC6D6bD1_5-Wfwm2BFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610934896145-fph639382j5mblaeob17kf3mis678hfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

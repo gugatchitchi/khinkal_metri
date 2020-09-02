@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:khinkal_metri/configs/configs.dart';
 
 // This appbar is used to dispay icon on the top of pages
@@ -22,9 +21,10 @@ class CustomAppBarWithLogo extends StatelessWidget with PreferredSizeWidget {
       centerTitle: false,
       // Logo on the left
       leading: Padding(
-        padding: const EdgeInsets.only(left: 10.0, top: 5.0, bottom: 5.0),
-        child: SvgPicture.asset(
-          logoSVG,
+        padding: const EdgeInsets.only(left: 20.0, top: 5.0, bottom: 5.0),
+        child: Icon(
+          MyCustomIcons.logo,
+          color: Palette.font,
         ),
       ),
       // Text on the right
@@ -33,7 +33,7 @@ class CustomAppBarWithLogo extends StatelessWidget with PreferredSizeWidget {
         style: TextStyle(
           color: Palette.font,
           fontWeight: FontWeight.bold,
-          fontSize: 14.0,
+          fontSize: 16.0,
         ),
       ),
     );

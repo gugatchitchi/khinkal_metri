@@ -17,6 +17,7 @@ class CustomBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // Decoration of the container
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: Palette.bg,
@@ -33,6 +34,8 @@ class CustomBottomNavigation extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Pages are given from parrent widget
+          // here we only itterate through them create icons
           for (var i = 0; i < pages.length; i++)
             CustomBottomNavigationButton(
               onTap: () {

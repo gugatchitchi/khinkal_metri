@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:khinkal_metri/configs/configs.dart';
 import 'package:khinkal_metri/widgets/widgets.dart';
 import 'package:khinkal_metri/models/models.dart';
+import 'package:khinkal_metri/data/data.dart';
 
 class RatingsPage extends StatefulWidget {
   const RatingsPage({Key key}) : super(key: key);
@@ -70,14 +71,24 @@ class _RatingsPageState extends State<RatingsPage> {
             // Generate Pages
             children: <Widget>[
               for (var page in pages)
-                new Center(
-                  child: new Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      new Icon(page.icon),
-                      new Text(page.name)
-                    ],
-                  ),
+                new CustomScrollView(
+                  slivers: [
+                    // Yellow message whic informs users
+                    // to inform us to add missing restaurant
+                    SliverToBoxAdapter(
+                      child: AddRestaurantMessage(),
+                    ),
+                    SliverToBoxAdapter(
+                      child: new Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          new Image.network(
+                            AllData.restaurantsData[0].imgUrl,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
             ],
           ),
