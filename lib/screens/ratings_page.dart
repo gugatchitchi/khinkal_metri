@@ -51,10 +51,39 @@ class _RatingsPageState extends State<RatingsPage> {
     super.dispose();
   }
 
+  // Returns color based on int
+  Color _getColor(int number) {
+    var res = number % 3;
+    if (res == 0) return Palette.accent_red;
+    if (res == 1) return Palette.accent_green;
+    if (res == 2) return Palette.accent_blue;
+  }
+
+  // Generates Custom List of Restaurants
+  List<Widget> _buildList() {
+    List<Widget> listItems = List();
+
+    for (int i = 0; i < AllData.restaurantsData.length; i++) {
+      listItems.add(
+        CustomListItem(
+            restaurant: AllData.restaurantsData[i],
+            index: i + 1,
+            color: _getColor(i)),
+      );
+    }
+
+    listItems.add(SizedBox(
+      height: 150.0,
+    ));
+
+    return listItems;
+  }
+
   @override
   Widget build(BuildContext context) {
     // Let's us use relative sizes, ex: 40% of the width
     SizeConfig().init(context);
+
     // Custom Scaffold
     return ScaffoldWithAppbar(
       body: Stack(
@@ -73,20 +102,15 @@ class _RatingsPageState extends State<RatingsPage> {
               for (var page in pages)
                 new CustomScrollView(
                   slivers: [
-                    // Yellow message whic informs users
+                    // Yellow message which informs users
                     // to inform us to add missing restaurant
                     SliverToBoxAdapter(
                       child: AddRestaurantMessage(),
                     ),
-                    SliverToBoxAdapter(
-                      child: new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.network(
-                            AllData.restaurantsData[0].imgUrl,
-                          ),
-                        ],
-                      ),
+
+                    // Restaurants List
+                    SliverList(
+                      delegate: new SliverChildListDelegate(_buildList()),
                     ),
                   ],
                 ),

@@ -16,6 +16,7 @@ class CustomAppBarWithLogo extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      titleSpacing: 5.0,
       backgroundColor: Palette.bg,
       elevation: 0,
       centerTitle: false,
