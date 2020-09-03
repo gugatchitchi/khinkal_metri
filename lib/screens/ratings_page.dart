@@ -72,6 +72,7 @@ class _RatingsPageState extends State<RatingsPage> {
       );
     }
 
+    // This line adds padding at the bottom of the list
     listItems.add(SizedBox(
       height: 150.0,
     ));
