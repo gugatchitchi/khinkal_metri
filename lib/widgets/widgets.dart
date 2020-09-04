@@ -4,3 +4,5 @@ export 'scaffold_with_appbar.dart';
 export 'custom_bottom_navigation.dart';
 export 'add_restaurant_message.dart';
 export 'custom_list_item.dart';
+export 'restaurant_oval_image.dart';
+export 'round_icon_button.dart';

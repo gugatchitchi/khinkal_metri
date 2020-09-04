@@ -51,14 +51,6 @@ class _RatingsPageState extends State<RatingsPage> {
     super.dispose();
   }
 
-  // Returns color based on int
-  Color _getColor(int number) {
-    var res = number % 3;
-    if (res == 0) return Palette.accent_red;
-    if (res == 1) return Palette.accent_green;
-    if (res == 2) return Palette.accent_blue;
-  }
-
   // Generates Custom List of Restaurants
   List<Widget> _buildList() {
     List<Widget> listItems = List();
@@ -66,9 +58,9 @@ class _RatingsPageState extends State<RatingsPage> {
     for (int i = 0; i < AllData.restaurantsData.length; i++) {
       listItems.add(
         CustomListItem(
-            restaurant: AllData.restaurantsData[i],
-            index: i + 1,
-            color: _getColor(i)),
+          restaurant: AllData.restaurantsData[i],
+          index: i + 1,
+        ),
       );
     }
 

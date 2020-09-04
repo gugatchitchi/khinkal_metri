@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khinkal_metri/configs/configs.dart';
+import 'package:khinkal_metri/widgets/widgets.dart';
 
 class AddRestaurantMessage extends StatelessWidget {
   const AddRestaurantMessage({Key key}) : super(key: key);
@@ -32,18 +33,7 @@ class AddRestaurantMessage extends StatelessWidget {
         Positioned(
           left: SizeConfig.safeBlockHorizontal * 75,
           top: 20.0,
-          child: RawMaterialButton(
-            onPressed: () {},
-            elevation: 10.0,
-            fillColor: Palette.bg,
-            child: Icon(
-              Icons.add,
-              color: Palette.font,
-              size: SizeConfig.safeBlockHorizontal * 10,
-            ),
-            padding: EdgeInsets.all(SizeConfig.safeBlockHorizontal * 2),
-            shape: CircleBorder(),
-          ),
+          child: RoundIconButton(icon: Icons.add, onTap: () {}),
         ),
       ],
     );

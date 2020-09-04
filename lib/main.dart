@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/categories': (context) => CategoriesPage(),
         '/ratings': (context) => RatingsPage(),
+        '/restaurant': (context) => RestaurantPage(),
       },
       home: LoginPage(),
     );
