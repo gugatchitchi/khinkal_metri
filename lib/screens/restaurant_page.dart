@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khinkal_metri/configs/configs.dart';
+import 'package:khinkal_metri/data/data.dart';
 import 'package:khinkal_metri/models/models.dart';
 import 'package:khinkal_metri/widgets/widgets.dart';
 
@@ -7,6 +8,19 @@ class RestaurantPage extends StatelessWidget {
   const RestaurantPage({
     Key key,
   }) : super(key: key);
+
+  // Generates Custom List of Restaurants
+  // List<Widget> _buildList() {
+  //   List<Widget> listItems = List();
+
+  //   for (int i = 0; i < AllData.ratings.length; i++) {
+  //     listItems.add(
+  //       RestaurantComment(
+  //         name: ,
+  //       ),
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -22,44 +36,18 @@ class RestaurantPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: SizeConfig.blockSizeHorizontal * 100,
-                  decoration: BoxDecoration(
-                    color: restaurant.color,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft:
-                          Radius.circular(SizeConfig.blockSizeHorizontal * 50),
-                      bottomRight:
-                          Radius.circular(SizeConfig.blockSizeHorizontal * 50),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: SizeConfig.blockSizeHorizontal * 20,
-                  child: Hero(
-                    tag: restaurant.name,
-                    child: RestaurantOvalImage(
-                      diameter: SizeConfig.blockSizeHorizontal * 70,
-                      imgUrl: restaurant.imgUrl,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 0,
-                  top: SizeConfig.blockSizeHorizontal * 10,
-                  child: RoundIconButton(
-                      icon: Icons.arrow_back,
-                      onTap: () {
-                        Navigator.pop(context);
-                      }),
-                ),
-              ],
+            child: RestaurantPageCover(
+              name: restaurant.name,
+              color: restaurant.color,
+              imgUrl: restaurant.imgUrl,
             ),
           ),
+          SliverToBoxAdapter(
+            child: RestaurantPageInfo(name: restaurant.name),
+          ),
+          // SliverList(
+          //   delegate: new SliverChildListDelegate(_buildList()),
+          // ),
         ],
       ),
     );

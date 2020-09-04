@@ -112,40 +112,18 @@ class CustomListItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             // Stars
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '4.7',
-                                  style: TextStyle(
-                                    color: Palette.font,
-                                    fontSize: 10.0,
-                                  ),
-                                ),
-                                for (var i = 0; i < 4; i++)
-                                  Icon(
-                                    Icons.star,
-                                    color: Palette.font,
-                                    size: 12.0,
-                                  ),
-                                Icon(
-                                  Icons.star_half,
-                                  color: Palette.font,
-                                  size: 12.0,
-                                ),
-                              ],
+                            StarsRatings(
+                              rating: 4.4,
+                              fontSize: 12.0,
                             ),
 
                             // Vote quantity
                             Padding(
                               padding: EdgeInsets.only(
                                   right: SizeConfig.safeBlockHorizontal * 3),
-                              child: Text(
-                                '(126 ხმა)',
-                                style: TextStyle(
-                                  color: Palette.font,
-                                  fontSize: 10.0,
-                                ),
+                              child: VoteQuantity(
+                                fontSize: 12.0,
+                                votes: 1126,
                               ),
                             ),
                           ],

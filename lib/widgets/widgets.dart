@@ -6,3 +6,8 @@ export 'add_restaurant_message.dart';
 export 'custom_list_item.dart';
 export 'restaurant_oval_image.dart';
 export 'round_icon_button.dart';
+export 'stars_ratings.dart';
+export 'vote_quantity.dart';
+export 'restaurant_page_cover.dart';
+export 'restaurant_page_info.dart';
+export 'restaurant_comment.dart';
