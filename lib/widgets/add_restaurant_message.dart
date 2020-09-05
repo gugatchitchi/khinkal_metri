@@ -11,6 +11,7 @@ class AddRestaurantMessage extends StatelessWidget {
       padding: const EdgeInsets.only(top: 30.0),
       child: new Stack(
         children: [
+          // Yellow container with text
           Container(
             margin: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
             padding: EdgeInsets.all(20.0),
@@ -32,10 +33,20 @@ class AddRestaurantMessage extends StatelessWidget {
               style: TextStyle(color: Palette.font, height: 2.0),
             ),
           ),
+
+          // Button
           Positioned(
             left: SizeConfig.safeBlockHorizontal * 75,
             top: 20.0,
-            child: RoundIconButton(icon: Icons.add, onTap: () {}),
+            child: RoundIconButton(
+              icon: Icons.add,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/addRestaurant',
+                );
+              },
+            ),
           ),
         ],
       ),

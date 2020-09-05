@@ -40,7 +40,7 @@ class LoginPage extends StatelessWidget {
             text: 'შემოდი Facebook',
             backgroundColor: Palette.accent_blue,
             onTap: () {
-              Navigator.pushNamed(context, '/categories');
+              Navigator.pushNamed(context, '/ratings');
             },
           ),
           // Spacer between buttons
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
             text: 'შემოდი Google+',
             backgroundColor: Palette.accent_yellow,
             onTap: () {
-              Navigator.pushNamed(context, '/categories');
+              Navigator.pushNamed(context, '/ratings');
             },
           ),
         ],

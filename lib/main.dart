@@ -13,9 +13,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/login': (context) => LoginPage(),
-        '/categories': (context) => CategoriesPage(),
+        // '/categories': (context) => CategoriesPage(),
         '/ratings': (context) => RatingsPage(),
         '/restaurant': (context) => RestaurantPage(),
+        '/addRating': (context) => AddRatingPage(),
+        '/addRestaurant': (context) => AddRestaurantPage(),
       },
       home: LoginPage(),
     );

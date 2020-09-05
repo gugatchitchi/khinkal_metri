@@ -4,12 +4,16 @@ class RestaurantModel {
   final String id;
   final String name;
   final String imgUrl;
-  final Color color;
+  final bool khinkaliRestaurant;
+  final bool shaurmaRestaurant;
+  final bool burgerRestaurant;
 
   RestaurantModel({
     @required this.id,
     @required this.name,
     @required this.imgUrl,
-    @required this.color,
+    this.khinkaliRestaurant = false,
+    this.shaurmaRestaurant = false,
+    this.burgerRestaurant = false,
   });
 }

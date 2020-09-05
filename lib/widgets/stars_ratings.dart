@@ -5,23 +5,76 @@ class StarsRatings extends StatelessWidget {
   final double rating;
   final double fontSize;
   final bool alignCenter;
+  final bool isComment;
   const StarsRatings({
     Key key,
     @required this.rating,
     @required this.fontSize,
     this.alignCenter = false,
+    this.isComment = false,
   }) : super(key: key);
 
-  // How many stars before remainder
-  // ex: 3.5 will return 3 and 4.8 will return 4
-  int _getFullStars(rating) {
-    return rating.floor();
-  }
+  // How many full stars and do we need half star
+  // ex: 3.4 will return 3 full and 1 half star
+  // ex: 4.8 will return 5 full stars
+  // ex: 4.0 will return 4 full stars
+  Widget _renderStars(rating) {
+    List<Widget> stars = List();
 
-  // If remainder is more than 0.5 we need full
-  // star, else half star
-  bool _needsFullStar(rating) {
-    return rating - rating.floor() > 0.5;
+    double remainder = rating - rating.floor();
+
+    if (remainder == 0.0) {
+      for (var i = 0; i < rating; i++) {
+        stars.add(
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
+            child: Icon(
+              Icons.star,
+              color: Palette.font,
+              size: fontSize,
+            ),
+          ),
+        );
+      }
+    } else if (remainder > 0.5) {
+      for (var i = 0; i < rating + 1; i++) {
+        stars.add(
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
+            child: Icon(
+              Icons.star,
+              color: Palette.font,
+              size: fontSize,
+            ),
+          ),
+        );
+      }
+    } else {
+      for (var i = 0; i < rating; i++) {
+        stars.add(
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
+            child: Icon(
+              Icons.star,
+              color: Palette.font,
+              size: fontSize,
+            ),
+          ),
+        );
+      }
+      stars.add(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
+          child: Icon(
+            Icons.star_half,
+            color: Palette.font,
+            size: fontSize,
+          ),
+        ),
+      );
+    }
+
+    return Row(children: stars);
   }
 
   @override
@@ -32,7 +85,7 @@ class StarsRatings extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          rating.toString(),
+          isComment ? rating.toStringAsFixed(0) : rating.toStringAsFixed(1),
           style: TextStyle(
             color: Palette.font,
             fontSize: fontSize,
@@ -42,35 +95,8 @@ class StarsRatings extends StatelessWidget {
         // Spacer
         SizedBox(width: fontSize / 4),
 
-        // Full Stars
-        for (var i = 0; i < _getFullStars(rating); i++)
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
-            child: Icon(
-              Icons.star,
-              color: Palette.font,
-              size: fontSize,
-            ),
-          ),
-
-        // Last Star
-        _needsFullStar(rating)
-            ? Padding(
-                padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
-                child: Icon(
-                  Icons.star,
-                  color: Palette.font,
-                  size: fontSize,
-                ),
-              )
-            : Padding(
-                padding: EdgeInsets.symmetric(horizontal: fontSize / 8),
-                child: Icon(
-                  Icons.star_half,
-                  color: Palette.font,
-                  size: fontSize,
-                ),
-              ),
+        // Render Stars
+        _renderStars(rating),
       ],
     );
   }

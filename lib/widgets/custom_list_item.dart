@@ -6,11 +6,19 @@ import 'package:khinkal_metri/widgets/widgets.dart';
 class CustomListItem extends StatelessWidget {
   final RestaurantModel restaurant;
   final int index;
+  final int votes;
+  final double rating;
+  final Color color;
+  final String category;
 
   const CustomListItem({
     Key key,
     @required this.restaurant,
     @required this.index,
+    @required this.votes,
+    @required this.rating,
+    @required this.color,
+    @required this.category,
   }) : super(key: key);
 
   @override
@@ -47,8 +55,15 @@ class CustomListItem extends StatelessWidget {
                 // Colored Container
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/restaurant',
-                        arguments: restaurant);
+                    Navigator.pushNamed(
+                      context,
+                      '/restaurant',
+                      arguments: RestaurantPageModel(
+                        restaurant: restaurant,
+                        color: color,
+                        category: category,
+                      ),
+                    );
                   },
                   child: Container(
                     height: pictureDiameter + SizeConfig.safeBlockVertical * 5,
@@ -62,7 +77,7 @@ class CustomListItem extends StatelessWidget {
                           SizeConfig.safeBlockHorizontal * 3,
                     ),
                     decoration: BoxDecoration(
-                      color: restaurant.color,
+                      color: color,
                       // color: Palette.accent_red,
                       borderRadius: BorderRadius.circular(20.0),
                       boxShadow: [
@@ -113,7 +128,7 @@ class CustomListItem extends StatelessWidget {
                           children: [
                             // Stars
                             StarsRatings(
-                              rating: 4.4,
+                              rating: rating,
                               fontSize: 12.0,
                             ),
 
@@ -123,7 +138,7 @@ class CustomListItem extends StatelessWidget {
                                   right: SizeConfig.safeBlockHorizontal * 3),
                               child: VoteQuantity(
                                 fontSize: 12.0,
-                                votes: 1126,
+                                votes: votes,
                               ),
                             ),
                           ],
@@ -135,7 +150,7 @@ class CustomListItem extends StatelessWidget {
 
                 // Restaurant Image
                 Hero(
-                  tag: restaurant.name,
+                  tag: restaurant.id,
                   child: RestaurantOvalImage(
                     diameter: pictureDiameter,
                     imgUrl: restaurant.imgUrl,

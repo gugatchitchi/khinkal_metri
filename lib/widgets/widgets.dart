@@ -11,3 +11,4 @@ export 'vote_quantity.dart';
 export 'restaurant_page_cover.dart';
 export 'restaurant_page_info.dart';
 export 'restaurant_comment.dart';
+export 'add_rating_form.dart';

@@ -10,10 +10,8 @@ class MyCustomIcons {
       IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData khinkali =
       IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData khinkalmeter =
-      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData logo =
-      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData shaurma =
-      IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

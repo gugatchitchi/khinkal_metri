@@ -18,27 +18,36 @@ class RestaurantPageCover extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
+        // Background
         Container(
           width: double.infinity,
           height: SizeConfig.blockSizeHorizontal * 100,
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(SizeConfig.blockSizeHorizontal * 50),
-              bottomRight: Radius.circular(SizeConfig.blockSizeHorizontal * 50),
+              bottomLeft: Radius.elliptical(
+                SizeConfig.blockSizeHorizontal * 50,
+                SizeConfig.safeBlockVertical * 20,
+              ),
+              bottomRight: Radius.elliptical(
+                SizeConfig.blockSizeHorizontal * 50,
+                SizeConfig.safeBlockVertical * 20,
+              ),
             ),
           ),
         ),
+        // Image
         Positioned(
-          top: SizeConfig.blockSizeHorizontal * 20,
+          top: SizeConfig.blockSizeHorizontal * 5,
           child: Hero(
             tag: name,
             child: RestaurantOvalImage(
-              diameter: SizeConfig.blockSizeHorizontal * 70,
+              diameter: SizeConfig.blockSizeHorizontal * 80,
               imgUrl: imgUrl,
             ),
           ),
         ),
+        // Back Button
         Positioned(
           left: 0,
           top: SizeConfig.blockSizeHorizontal * 10,
