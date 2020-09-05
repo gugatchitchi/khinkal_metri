@@ -103,7 +103,7 @@ class RestaurantPage extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: RestaurantPageCover(
-              name: _restaurant.name,
+              id: _restaurant.id,
               imgUrl: _restaurant.imgUrl,
               color: _color,
             ),

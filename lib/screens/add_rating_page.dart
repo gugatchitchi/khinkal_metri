@@ -24,7 +24,7 @@ class AddRatingPage extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: RestaurantPageCover(
-              name: restaurant.name,
+              id: restaurant.id,
               color: color,
               imgUrl: restaurant.imgUrl,
             ),

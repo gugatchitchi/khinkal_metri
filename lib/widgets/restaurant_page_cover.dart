@@ -3,12 +3,12 @@ import 'package:khinkal_metri/configs/configs.dart';
 import 'package:khinkal_metri/widgets/widgets.dart';
 
 class RestaurantPageCover extends StatelessWidget {
-  final String name;
+  final String id;
   final Color color;
   final String imgUrl;
   const RestaurantPageCover({
     Key key,
-    @required this.name,
+    @required this.id,
     @required this.color,
     @required this.imgUrl,
   }) : super(key: key);
@@ -38,11 +38,11 @@ class RestaurantPageCover extends StatelessWidget {
         ),
         // Image
         Positioned(
-          top: SizeConfig.blockSizeHorizontal * 5,
+          top: SizeConfig.blockSizeHorizontal * 15,
           child: Hero(
-            tag: name,
+            tag: id,
             child: RestaurantOvalImage(
-              diameter: SizeConfig.blockSizeHorizontal * 80,
+              diameter: SizeConfig.blockSizeHorizontal * 70,
               imgUrl: imgUrl,
             ),
           ),
